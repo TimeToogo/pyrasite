@@ -24,8 +24,8 @@ encoding = sys.getdefaultencoding()
 def inspect(pid, address):
     "Return the value of an object in a given process at the specified address"
     cmd = ' '.join([
-        'gdb --quiet -p %s -batch' % pid,
-        '-eval-command="print (PyObject *)%s"' % address,
+        'lldb -p %s -b' % pid,
+        '-o "expression -- (PyObject *)%s"' % address,
     ])
     p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
     for line in p.communicate()[0].decode(encoding).split('\n'):
