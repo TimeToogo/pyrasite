@@ -64,7 +64,7 @@ class PyrasiteIPC(object):
     # shell payloads with netcat.
     reliable = True
 
-    def __init__(self, pid, reverse='ReversePythonConnection', timeout=5):
+    def __init__(self, pid, reverse='ReversePythonConnection', timeout=300):
         super(PyrasiteIPC, self).__init__()
         self.pid = pid
         self.sock = None
