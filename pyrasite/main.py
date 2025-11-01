@@ -92,7 +92,7 @@ def main():
                         help="Set where output is to be printed. 'procstreams'" 
                              " prints output in stdout/stderr of running process"
                              " and 'localterm' prints output in local terminal.")
-    parser.add_argument('--ipc-timeout', dest='ipc_timeout', default=5,
+    parser.add_argument('--ipc-timeout', dest='ipc_timeout', default=300,
                         action='store', type=int,
                         help="The number of seconds to wait for the injected"
                              " code to reply over IPC before giving up.")
