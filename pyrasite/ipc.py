@@ -198,6 +198,7 @@ class PyrasiteIPC(object):
 
     def recv_bytes(self, n):
         """Receive n bytes from a socket"""
+        self.sock.settimeout(self.timeout)
         data = ''.encode('utf-8')
         while len(data) < n:
             chunk = self.sock.recv(n - len(data))
